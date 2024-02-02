@@ -1,5 +1,3 @@
-# dfs와 stack 활용
-
 from collections import deque
     
 def solution(maps):
