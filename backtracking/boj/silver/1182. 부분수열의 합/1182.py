@@ -20,3 +20,27 @@ def backtrack(idx, sum):
 backtrack(0, 0)
 
 print(count)
+
+# 다른 풀이
+# n, s = map(int, input().split())
+# array = list(map(int, input().split()))
+# 
+# count = 0
+# selected = []
+# 
+# 
+# def backtrack(idx):
+#     global count
+# 
+#     if sum(selected) == s and len(selected) > 0:
+#         count += 1
+# 
+#     for i in range(idx, n):
+#         selected.append(array[i])
+#         backtrack(i + 1)
+#         selected.pop()
+# 
+# 
+# backtrack(0)
+# 
+# print(count)
