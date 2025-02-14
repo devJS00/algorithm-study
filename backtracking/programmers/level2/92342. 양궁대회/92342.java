@@ -4,7 +4,7 @@ class Solution {
     int maxDiff;
     
     void backtrack(int n, int idx, int[] ryan) {
-        if (idx == 11 || n == 0) { // 11번째 점수까지 확인했거나 화살을 다 썼을 때
+        if (idx == 10 || n == 0) { // 11번째 점수까지 확인했거나 화살을 다 썼을 때
             ryan[10] += n; // 같은 점수 차이일 때 처리 위해 필요함
             int ryanScore = 0, apeachScore = 0;
 
