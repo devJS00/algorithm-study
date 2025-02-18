@@ -17,20 +17,21 @@ public class Main {
     }
 
     public static int getMinimumBags(int N) {
-        int threeCount = 0;
-        int fiveCount = 0;
+        int[] dp = new int[N + 1];
+        final int INF = Integer.MAX_VALUE;
 
-        // 5로 나누어 떨어질 때까지 3을 빼줌
-        while(N % 5 != 0) {
-            N -= 3;
-            threeCount++;
-            if(N < 0) {
-                return -1;
-            }
+        for (int i = 0; i <= N; i++) {
+            dp[i] = INF;
         }
 
-        fiveCount = N / 5;
+        if (N >= 3) dp[3] = 1;
+        if (N >= 5) dp[5] = 1;
 
-        return threeCount + fiveCount;
+        for (int i = 6; i <= N; i++) {
+            if (dp[i - 3] != INF) dp[i] = Math.min(dp[i], dp[i - 3] + 1);
+            if (dp[i - 5] != INF) dp[i] = Math.min(dp[i], dp[i - 5] + 1);
+        }
+
+        return dp[N] == INF ? -1 : dp[N];
     }
 }
