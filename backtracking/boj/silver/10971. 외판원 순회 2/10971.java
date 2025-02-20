@@ -17,9 +17,9 @@ public class Main {
             }
         }
 
-        int minCost = solveTSP(); // TSP 문제 해결 함수 호출
+        int minCost = solveTSP(); 
 
-        System.out.println(minCost); // 최소 비용 출력
+        System.out.println(minCost); 
 
         br.close();
     }
