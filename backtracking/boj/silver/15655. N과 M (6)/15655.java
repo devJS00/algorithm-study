@@ -9,15 +9,13 @@ public class Main {
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
-        int[] numbers = new int[N]; // 입력된 N개의 자연수 저장 배열
+        int[] numbers = new int[N]; 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             numbers[i] = Integer.parseInt(st.nextToken());
         }
 
-        Arrays.sort(numbers); // 수열을 사전순으로 출력하기 위해 정렬
-
-        backtracking(N, M, numbers); // 백트래킹 함수 호출
+        backtracking(N, M, numbers); 
 
         br.close();
     }
