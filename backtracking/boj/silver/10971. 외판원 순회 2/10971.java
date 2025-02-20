@@ -4,6 +4,7 @@ import java.util.*;
 public class Main {
     static int N;
     static int[][] W;
+    static int minCost;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,14 +18,13 @@ public class Main {
             }
         }
 
-        int minCost = solveTSP(); 
-
-        System.out.println(minCost); 
+        minCost = Integer.MAX_VALUE;
+        solveTSP();
+        System.out.println(minCost);
 
         br.close();
     }
 
-    static int minCost = Integer.MAX_VALUE;
 
     private static void backtracking(int start, int cur, int cost, ArrayList<Integer> path) {
         if(path.size() == N) {
@@ -44,12 +44,11 @@ public class Main {
         }
     }
 
-    private static int solveTSP() {
+    private static void solveTSP() {
         for(int i = 0; i < N; i++) {
             ArrayList<Integer> path = new ArrayList<>();
             path.add(i);  // 시작 도시 추가
             backtracking(i, i,0, path);
         }
-        return minCost;
     }
 }
